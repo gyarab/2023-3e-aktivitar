@@ -1,0 +1,45 @@
+.infocard {
+    width: 400px;
+    background-color: #67d2e6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin: 20px auto;
+    padding: 20px;
+    opacity: 0.2;
+    transition: opacity 0.3s ease-in-out;
+}
+.infocard:hover {
+    opacity: 1;
+}
+.infocard h1 {
+    font-size: 24px;
+    color: #000000;
+    text-align: center;
+    margin-bottom: 20px;
+}
+
+.infocard p {
+    font-size: 16px;
+    color: #ffffff;
+    line-height: 1.6;
+}
+
+.infocard img {
+    display: block;
+    margin: 0 auto;
+    max-width: 100%;
+    border-radius: 10px;
+}
+
+.infocard a {
+    display: block;
+    text-align: center;
+    font-size: 16px;
+    color: #531f1f;
+    text-decoration: none;
+    margin-top: 20px;
+}
+
+.infocard a:hover {
+    text-decoration: underline;
+}

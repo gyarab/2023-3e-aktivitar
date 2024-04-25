@@ -1,0 +1,345 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.template-frame {
+    display: none;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+
+.main-content {
+   /* margin-left: 80px;*/
+    padding: 20px;
+    
+}
+
+
+.container {
+    display: flex;
+    flex-direction: column;
+}
+
+
+.frame {
+    min-width: 150px;
+    min-height: 200px;
+    margin: 0 10px 20px;
+    border-radius: 10px;
+    display: inline-block;
+    text-align: center;
+  /*  overflow: hidden;*/           /*kdyz se text nevejde do framu, at se urizne a nepresahuje pres ten frame, ale neni potreba protoze tam mam ze se to rozdeli*/
+ 
+  display: none;
+  
+    overflow-wrap: break-word;
+    word-wrap: break-word;
+    -webkit-hyphens: auto;
+    -ms-hyphens: auto;
+    hyphens: none;
+
+    
+
+
+
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: 150px 150px 150px;
+    grid-gap: 35px 150px;
+    justify-content: center;
+    /* margin-left: calc(50vw - 50%) !important; */
+    margin-right: calc(50vw - 50%) !important;
+}
+
+.gridparent {
+    justify-content: center;
+    display:flex;
+    margin-left: calc(50vw - 50%) !important;
+    margin-right: calc(50vw - 50%) !important;
+}
+
+@media (max-width: 600px) and (max-aspect-ratio: 2/1) {
+    .grid {
+        grid-template-columns: repeat(2, 1fr);
+        grid-template-rows: repeat(3, 1fr);
+    }
+}
+
+@media (max-width: 450px) {
+    .grid {
+        grid-template-columns: 1fr;
+    }
+}
+
+
+
+
+#aktivitaframe {
+    border: 2px solid #e67e22; 
+    background-color: #e67d2221;
+}
+
+#jidloframe {
+    border: 2px solid #00af26; 
+    background-color: #00af2625;
+}
+
+#spanekframe {
+    border: 2px solid #3416df; 
+    background-color: #3416df23;
+}
+
+#zapisframe {
+    border: 2px solid #000000;
+    background-color: #00000021;
+}
+
+#emptyframe {
+  
+    display: flex;
+    align-items: center; /* Center vertically */
+    justify-content: center;
+    border: 2px solid #9c9c9c15;
+    
+        width: 250px;
+        height: 400px;
+        position: relative;
+       
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+       
+        border-radius: 4px;
+        padding: 20px;
+        transition: all .3s ease-in;
+}
+
+
+.chart {
+    width: 100%;
+    height: 200px;
+}
+
+.frame h2 {
+    margin-top: 0;
+    font-size: 20px; /*velikost nazvu framu*/
+}
+
+
+
+.card-container{
+    display: flex;
+
+    align-items:  center;
+    gap: 15px;
+    flex-wrap: wrap;
+    
+ 
+}
+.card{
+    width: 280px;
+    height: 400px;
+    position: relative;
+    border-radius: 20px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+   
+    padding: 20px;
+    transition: all .2s ease-in; 
+}
+
+#sport{
+
+    background: linear-gradient(to bottom, rgb(247 201 175), #e17518);
+     /* linear-gradient(to bottom, rgb(247 201 175), #e17518)  
+    linear-gradient(to bottom, #cba5e5, #932ed9)*
+    
+    #212dcf4f
+    linear-gradient(to bottom right, #98a0ff, #98a0ff)
+
+    linear-gradient(to bottom left, #a8bb3f, #819b17)
+    linear-gradient(to bottom right, #c4be7d, #a29226);
+*/
+}
+#calories{
+    background: linear-gradient(to bottom, #a5ffb9, #1bff4c);
+   
+}
+#sleep{
+    background: linear-gradient(to bottom, #cba5e5, #932ed9);
+}
+
+
+
+
+.card > * {
+    padding: 10px;
+}
+.card .card-image-sport{
+    height: 150px;
+    width: 150px;
+    border: 5px  #022a3c;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../images/flame.png);
+
+}
+.card .card-image-call{
+    height: 150px;
+    width: 150px;
+    border: 5px  #022a3c;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../images/food.png);
+
+}
+.card .card-image-sleep{
+    height: 150px;
+    width: 150px;
+    border: 5px #022a3c;
+    border-radius: 50%;
+    background-position: center center;
+    background-size: cover;
+    background-image: url(../images/moon.png);
+
+}
+.card .card-title{
+    padding: 20px 10px;
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    font-weight: bold;
+
+}
+
+#sport:hover{
+    box-shadow: 0px 0px 11px 5px #ff9f0f;
+}
+
+#calories:hover{
+    box-shadow: 0px 0px 11px 5px #00af26;
+}
+
+#sleep:hover{
+    box-shadow: 0px 0px 11px 5px #9f52d3;
+}
+
+.calories.card-text{
+margin-bottom: 30px;
+}
+
+
+.card .card-text{
+  line-height: 20px;  
+}
+
+
+.nadpis {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to left,  #4d68ff, #7801e7);
+    margin-bottom: 30px;
+
+}
+
+
+.nadpis h1{
+    color: #ffffff;
+    font-size: 50px;
+    font-family: "Reem Kufi Ink", sans-serif;
+}
+
+.main-content{
+    background: linear-gradient(to bottom right, #4d68ff, #640909);
+    min-height: 100vh;
+}
+
+#podnadpis{
+color: white;
+text-align: center;
+font-size: 30px;
+margin-bottom: 10px;
+}
+
+
+.gridos{
+    justify-content: center;
+}
+
+
+.BMI{
+   text-align: center;
+   margin-bottom: 50px;
+}
+
+.popis{
+    position: absolute;
+    margin-top: -5px;
+    color: white;
+}
+
+.slider-wrapper{
+    position: relative;
+    max-width: 60rem;
+    margin: 0 auto;
+  }
+  
+  .slider{
+    display: flex;
+    aspect-ratio: 16/9;
+    overflow-x: auto;
+    overflow-x: hidden; 
+    scroll-snap-type: x mandatory;
+    scroll-behavior: smooth;
+    box-shadow: 0 1.5rem 3rem -0.75rem hsla(0, 0%, 0%, 0.25 );
+    border-radius: 0.5rem;
+  }
+  
+  
+  .slider .containerChart{
+    flex: 1 0 100%;
+    scroll-snap-align: start;
+    object-fit: cover;
+    overflow-x: scroll;
+    scrollbar-color: black;
+    /*overflow: transparent;*/
+    width: 1000px;
+    max-width: 1000px;
+  }
+  .slider .containerChart *{
+    height: 500px;
+  }
+
+  @media screen and (max-width: 1800px) {
+    .popis {
+      position: relative;
+      top: 25px; /* Adjust this value to move it down */
+      margin-bottom: 0; /* Reset margin bottom */
+      
+    }
+    .popis h2{
+        display: none;
+    }
+  }
+  
+
+  

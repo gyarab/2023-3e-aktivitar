@@ -1,0 +1,200 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+.pridat-aktivitu {
+    background: linear-gradient(to right, #229cff, #8011ff);
+    color: #ffffff;
+    padding: 10px 40px;
+    border: none;
+    cursor: pointer;
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    border-radius: 5px;
+    font-size: 30px;
+  }
+
+.main-content{
+    position: relative;
+    background-color: white;
+    min-height: 100vh;
+    top: 0;
+    transition: all 0.5s ease;
+    width: calc(100% - 80px);
+    padding: 1rem;
+}
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.5);
+}
+
+.popup-content {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    padding: 20px;
+    background: #fff;
+    border-radius: 5px;
+    text-align: center;
+    transition: top 0.5s ease;          /*animace posunu popupu nahoru po tom co kliknu na nejakou tu ikonu*/
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+
+
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+}
+
+.icon-gallery {
+    display: flex;
+    justify-content: space-around;
+    margin: 0px;                
+}
+
+
+.icon-item {
+    text-align: center;
+}
+
+.icon-item i {
+    font-size: 36px;
+    color: #a3ddff;
+    transition: color 0.3s ease, transform 0.3s ease;
+}
+
+
+.icon-item:first-child i:hover {
+    color: #e67e22;
+    transform: scale(1.2) rotate(3deg)
+
+}
+
+.icon-item:nth-child(2) i:hover {
+    color: #00af26; 
+    transform: scale(1.2) rotate(2deg); 
+}
+
+.icon-item:nth-child(3) i:hover {
+    color: #3416df; 
+
+    transform: scale(1.2) rotate(10deg); 
+}
+
+.icon-item:nth-child(4) i:hover {
+    color: #000000; 
+    transform: scale(1.2) rotate(3deg); 
+}
+
+.icon-item p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #000000;
+}
+
+.icon-item:first-child i.clicked1 {
+    color: #e67e22;
+}
+
+.icon-item:nth-child(2) i.clicked2 {
+    color: #00af26;
+}
+
+.icon-item:nth-child(3) i.clicked3 {
+    color: #3416df;
+}
+
+.icon-item:nth-child(4) i.clicked4 {
+    color: #000000;
+}
+
+
+.field {
+    display: block;
+    border-radius: 10px; 
+    background-color: transparent;
+    border: 1px solid rgb(0, 0, 0); /* Add border style */
+    margin: 0 auto; /* Center horizontally */
+    width: 90%; /* Adjust width as needed */
+    color: rgb(0, 0, 0);
+    text-align: center;
+    
+}
+
+.field:focus {
+    outline: none; /* Remove default focus outline */
+    border-color: #a3ddff; /* Set border color to white when focused */
+    /* Add any other styles you want for the focused state */
+}
+
+.field::placeholder {
+    color: rgb(0, 0, 0); /* Change to your desired color */
+    font-size: 14px
+    ;
+}
+
+
+.submit{
+    background: linear-gradient(to bottom right, #22ffb5, #52fa43);
+    color: white; 
+    padding: 10px 20px; 
+    font-size: 16px;
+    float: right;
+    border-radius: 10px; 
+    border-color: transparent;
+    width: 100%;
+
+    background-color: #c2fbd7;
+
+    box-shadow: rgba(56, 226, 121, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: rgb(11, 187, 11);
+
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+ 
+ 
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+  
+}
+
+
+
+.addActivity label {
+    color: rgb(0, 0, 0);
+    /* Add other label styles here */
+}
+
+.addActivity p{
+    color: rgb(0, 0, 0);
+}
+

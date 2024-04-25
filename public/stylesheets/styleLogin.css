@@ -1,0 +1,149 @@
+.background{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+    background: linear-gradient(to bottom right, darkblue, red);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  .content{
+     text-align: center;
+  }
+  
+  #logintext{
+      color: #ffffff;
+      font-size: 100px;
+      margin-bottom: 0;
+      font-family: "Reem Kufi Ink", sans-serif; /*to bych asi jeste zmenil*/
+      font-weight: 400;
+      font-style: normal;
+      margin-bottom: -20px;
+
+  }
+  
+  input.textfield{
+      margin: 15px;
+      padding: 10px;
+      border-color: rgb(255, 255, 255);
+      display: block;
+      margin-left: auto;
+      margin-right: auto;
+      transition: border-color 0.3s ease;
+      color: white;
+  }
+  
+
+  input.textfield:focus {
+    outline: none;
+    border-color: rgb(148, 148, 148);
+  }
+
+  input.textfield{
+    margin: 30px;
+    padding: 10px 20px;
+    border-color: rgb(0, 0, 0);
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 15px; 
+    background-color: transparent;
+    border: 1px solid white; 
+    width: 50%;
+    height: auto;
+    transform: scale(1.2);
+}
+
+button.submit{
+    margin-top: 30px;
+    background-color: #c2fbd7;
+    border-radius: 100px;
+    box-shadow: rgba(56, 226, 121, 0.2) 0 -25px 18px -14px inset,rgba(44, 187, 99, .15) 0 1px 2px,rgba(44, 187, 99, .15) 0 2px 4px,rgba(44, 187, 99, .15) 0 4px 8px,rgba(44, 187, 99, .15) 0 8px 16px,rgba(44, 187, 99, .15) 0 16px 32px;
+    color: rgb(11, 187, 11);
+    cursor: pointer;
+    display: inline-block;
+    font-family: CerebriSans-Regular,-apple-system,system-ui,Roboto,sans-serif;
+    padding: 7px 20px;
+    text-align: center;
+    text-decoration: none;
+    transition: all 250ms;
+    border: 0;
+    font-size: 16px;
+    user-select: none;
+    -webkit-user-select: none;
+    touch-action: manipulation;
+    transform: scale(2);
+}
+
+input.textfield::placeholder {
+    color:rgba(143, 143, 143, 0.884);
+}
+
+
+
+.submit:hover {
+    box-shadow: rgba(44,187,99,.35) 0 -25px 18px -14px inset,rgba(44,187,99,.25) 0 1px 2px,rgba(44,187,99,.25) 0 2px 4px,rgba(44,187,99,.25) 0 4px 8px,rgba(44,187,99,.25) 0 8px 16px,rgba(44,187,99,.25) 0 16px 32px;
+    transform: scale(2.1) rotate(-1deg);
+}
+
+.registertext{
+    margin-top: -10px;
+    color:rgba(143, 143, 143, 0.884);
+}
+
+.popup-error {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: .5rem;
+    color: #ffffff; /* White text */
+    background: linear-gradient(to bottom right, #ff1b1b, #c70404); /* Red glowing gradient background */
+    font-family: "Reem Kufi Ink", sans-serif;
+    box-shadow: 0 0 20px rgba(255, 69, 87, 0.5); /* Red glow effect */
+    font-size: 20px;
+}.popup-success {
+    padding: 1rem;
+    margin-bottom: 1rem;
+    border: none;
+    border-radius: .5rem;
+    color: #ffffff; /* White text */
+    background: linear-gradient(to bottom right, #2dc407, #208302); /* Red glowing gradient background */
+    font-family: "Reem Kufi Ink", sans-serif;
+    box-shadow: 0 0 20px rgba(255, 69, 87, 0.5); /* Red glow effect */
+    font-size: 20px;
+}
+
+
+.container-aktivitarcenter{
+    height: 100%;
+    margin: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 25px;
+
+}
+
+#aktivitar{
+    color: #ffffff;
+    font-size: 30px;
+  
+    font-family: "Reem Kufi Ink", sans-serif; 
+    font-weight: 400;
+    font-style: normal;
+  
+    margin-top: 0; 
+    margin-bottom: 250px; 
+    text-align: center;     /*proc to neni veprostreeeeed*/
+
+    text-decoration: none;
+    color: white;
+    cursor: pointer;
+  
+    
+  }

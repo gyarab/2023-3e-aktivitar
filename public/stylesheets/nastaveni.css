@@ -1,0 +1,167 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    
+}
+
+
+body {
+    margin: 0;
+    padding: 0;
+    display: flex;
+
+}
+.main-content{
+  background:  linear-gradient(to bottom right, #ea98da, #5b6cf9);
+  min-height: 100vh;
+}
+.container-nastaveni{
+    margin-left: 10%;
+  }
+.container-obsah{
+    margin-bottom: 100px; /* Adds space below each row */
+  }
+.container-obsah h1{
+    font-size: 30px;
+    margin-bottom: 20px; /* Adds space below each row */
+  
+}
+.container-obsah-dvojice{
+    margin-bottom: 100px; /* Adds space below each row */
+    float: left;
+    width: 50%; /* Each div takes 50% width */
+    box-sizing: border-box; /* Include padding and border in the width */
+  }
+
+.container-obsah-dvojice h1{
+    font-size: 30px;
+    margin-bottom: 20px; /* Adds space below each row */
+  
+}
+.table-container {
+    overflow: hidden;
+    border-radius: 10px; /* Adjust the border-radius value as needed */
+  }
+
+table {
+    width: 50%;
+    border-collapse: collapse;
+    margin-left: 4vh;
+    text-align: center;
+    background-color: rgb(255, 255, 255);
+    border-radius: 20px;
+
+}
+th, td {
+    padding: 10px;
+    text-align: center;
+    color: rgb(0, 0, 0);
+    font-weight: bold;
+    
+}
+th {
+    background-color: #adadad;
+}
+.inputBox{
+    position: relative;
+    width: 250px;
+}
+.inputBox input{
+    width: 100%;
+    padding: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    background:  #1d2b3a;
+    border-radius: 5px;
+    outline: none;
+    color: #fff;
+    font-size: 1em;
+    transition: 0.5s;
+    margin-bottom: 10px;
+}
+
+.inputBox span{
+    position: absolute;
+    left: 0;
+    padding: 10px;
+    pointer-events: none;
+    font-size: 1em;
+    color: rgba(255, 255, 255, 0.25);
+    text-transform: uppercase;
+    transition: 0.5s;
+}
+.inputBox input:valid ~ span,
+.inputBox input:focus ~ span {
+    color: aqua;
+    transform:  translateX(10px) translateY(-7px);
+    font-size: 0.65em;
+    padding: 0 10px;
+    background: #1d2b3a;
+    border-left: 1px solid aqua;
+    border-right: 1px solid aqua;
+    letter-spacing: 0.2em;
+
+}
+.inputBox input:nth-child(2) valid ~ span,
+.inputBox input:nth-child(2) focus ~ span {
+    background: aqua;
+    color: #1d2b3a;
+    border-radius: 2px;
+}
+
+.inputBox input:valid,
+.inputBox input:focus {
+    border: 1px solid aqua;
+}
+.button-submit {
+    background-color: #4CAF50; /* Green */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+.button-delete {
+    background-color: #fa2819; /* Red */
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 32px;
+    margin: 4px 2px;
+    cursor: pointer;
+    border-radius: 4px;
+}
+
+
+.nadpis {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: nowrap;
+    align-items: stretch;
+    justify-content: flex-start;
+    padding: 20px;
+    border-radius: 10px;
+    background: linear-gradient(to right, #bc8ae4, #8077f0);
+    margin-bottom: 30px;
+  
+  }
+  
+  
+  .nadpis h1{
+    color: #ffffff;
+    font-size: 50px;
+    font-family: "Reem Kufi Ink", sans-serif;
+  }
+  
+   /* popisna karta */
+
