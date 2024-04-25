@@ -1,0 +1,20 @@
+Napadlo me, ze by blo dobry mit treba takhle slozku do ktere by slo psat random info
+
+KRYSTOF
+- dodelat getActivites a pak to presunpuor do statistiky 
+https://www.youtube.com/watch?v=Ud5xKCYQTjM
+- a pak aby se to pushlo do browseru
+https://stackoverflow.com/questions/37307955/how-to-convert-node-js-date-to-sql-server-compatible-datetime
+Michal
+- pak bude potreba upravit .env a neupravovat a neposilat na git (delsi = bezpecnejsi)
+- udelat select z database pro tech poslednich sest aktivit (KR-pomuzu s napsanim SQL query)
+- - //upravit na homepage - login 
+https://www.passportjs.org/concepts/authentication/
+
+
+Simon
+- Udelat design te karticky pri pridani aktivity
+- Jeste by bylo asi fajn, kdyby ten sidebar vypadal dobre s tim zbytkem
+- Napadlo me treba udelat horni listu
+- Muselo se prepsat ty karticky last six na stejny dic aktivitaKarta nebo neco takobyho <div class="card-container" id="aktivitaKarta"> ; opno se to pak jebe - takze az bude hotovy karticky tak se to jen prepise 
+

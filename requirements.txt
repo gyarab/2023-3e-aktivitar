@@ -1,0 +1,12 @@
+express
+mysql2
+bcrypt
+passport-local
+uuid
+dotenv
+method-override
+express-flash
+express-session
+passport
+express-validator
+nodemon
