@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přátelé</title>
+    <link rel="stylesheet" href="/stylesheets/styleSideBar.css">
+    <link rel="stylesheet" href="/stylesheets/infocard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+    <link rel="stylesheet" href="/stylesheets/pratele.css">
+</head>
+<body>
+    
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+
+        <div class="main-content" >
+
+            <div class="nadpis">
+                <h1 style="text-align: center;">PŘÁTELÉ</h1>
+             </div>
+             <!-- Tady ten div udela aby to bylo od sidebaru -->
+            <div class="container-pratele">
+                <div class="container-obsah">
+                    <form class= "friends" id = "friends" action="/pratele" method="post">
+
+                        
+                            <h1>Přidat přítele</h1>
+                            <div class="search-container">
+                                <input type="text" class="search-input" id="search"  name="search" placeholder="Search..." onclick="disable()" required/>
+                                <button class="search-button" type="submit"><i class="fas fa-search">Přidat</i></button>
+                                <ul id="resultsSearch"></ul>
+                            </div>
+                            <br>
+                            <small id="errAttention" style="color: red;"><%= pridatSebe %></small>
+
+                    </form>
+                    <!-- popisna karta -->
+                    <div style="margin-top: -100px;" class="popis">  <h2 style="text-align: center; font-size: 25px;">Sekce přátel</h2>  
+                        <div class="infocard">
+                            <p>- V této sekci můžete vidět všechny vaše přátele a kliknutím na jejich jména budete přesměrováni na jejich profil, kde uvidíte jejich poslední aktivitu, bio a spoustu dalšího... <br><br>
+                            - Žádost o přátelství lehce vyřídíte jedním kliknutím<br><br> 
+                            - Pokud zatím žádné přátele nemáte, nebojte se je přidat pomocí vyhledávání.
+                            </p>
+                            
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="container-obsah">
+                        <h1>Tvoji přátelé</h1>
+                        <div id="resultsFriends" class="resultFriends"></div>
+                </div>
+                <div class="container-obsah" >
+                        <h1>Žádost o přátelství</h1>
+                        <div id="resultsReq"></div>
+                </div>
+    
+                <%- include('../views/pridatZaznam.ejs') %> 
+               
+            </div>
+        </div>
+        <div style="height: 120px;"></div>
+    
+        
+    <script src="/javascripts/addFriendSearch.js"></script>
+    <script src="/javascripts/loadFriendReq.js"></script>
+    <script src="/javascripts/loadMyfriends.js"></script>
+    <script>
+        function disable(){
+            const err = document.getElementById('errAttention');
+            err.style.display = 'none'
+        }
+
+    </script>
+    
+</body>
+</html>

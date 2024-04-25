@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přehled</title>
+    <link rel="stylesheet" href="/stylesheets/prehled.css">
+    <link rel="stylesheet" href="/stylesheets/infocard.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+
+
+<div class="card-container" id="aktivitaKarta">
+                </div>
+
+
+    <div class="main-content">
+
+        <div class="nadpis">
+            <h1 style="text-align: center;">PŘEHLED</h1>
+        </div>
+
+
+       
+
+
+       
+
+        
+
+
+ <div style="margin-top: 40px;" class="popis">  
+    <h2>Nápověda</h2>
+    <div style="margin-bottom: 75px;" class="infocard">
+        <h1>Jak funguje 'Last Six' ?</h1>
+        <p>- Sekce LastSix ukazuje vašich posledních šest zadaných aktivit<br><br>
+        - Nový záznam aktivity můžete přidat kliknutím na tlačítko <i >Přidat záznam</i>.
+        </p>
+        <a href="/historie?activtype=sport">Historii všech aktivit najdete zde nebo v sidebaru</a>
+    </div>
+        </div>
+
+
+        <h2 style="margin-top: 15px; margin-bottom: 15px;" id="podnadpis">Sekce: Last Six</h2>
+        <div style="justify-content: center;" class="gridparent">
+
+            <div class="grid">
+            </div>
+        </div>
+
+
+
+        <div class="container">
+            <%- include('../views/pridatZaznam.ejs') %>
+        </div>
+
+
+            <div style="justify-content: center;" class="gridos" id="kartickyLastSix">
+
+            <div style="justify-content: center;" class="gridos" id="kartickyLastSix">
+
+                
+
+                <div class="frame template-frame" id="aktivitaframe">
+                </div>
+
+                <div class="frame template-frame" id="jidloframe">
+                </div>
+
+                <div class="frame template-frame" id="spanekframe">
+                </div>
+
+                <div class="frame template-frame" id="zapisframe">
+                </div>
+
+                <div class="frame template-frame" id="emptyframe" style="display: none;">
+                    <h3>Žádná data</h3>
+                </div>
+            </div>
+    </div>
+
+
+    <div style="height: 100px;"></div>  <div class="BMI" style="align-items: center; margin: auto;">              
+        <h2 id="podnadpis">Sekce: BMI</h2>
+
+        <h1 style="color: white;">Vaše BMI: <%= BMI %></h1>
+        
+        <% if(BMI>=19 && BMI<25){ %>
+            <h1 style="color: white; font-size: 48px;">VÝBORNÉ</h1>🟢
+        <% }else if((BMI<19 && BMI >17)||(BMI>=25 && BMI<30)){ %>  
+            <h3 style="font-size: 24px;">DOBRÉ</h3>🟠
+        <% }else if(BMI<17||BMI>=30){  %> 
+            <h3 style="font-size: 24px;">ŠPATNÉ</h3>🔴
+        <%}%> 
+        <h4 style="color: white;">(Změnit můžete v sekci nastavení)</h4>
+        
+        <div style="margin-top: 100px;" id ="lastActivGraph"></div>
+
+        <div style="height: 200px;"></div>
+</body>
+
+    <script src="/javascripts/lastSixHandler.js"></script>
+    <script src="/javascripts/lastGraphHandler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+    
+</html>

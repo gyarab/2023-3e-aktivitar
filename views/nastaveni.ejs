@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nastavení</title>
+    <link rel="stylesheet" href="/stylesheets/nastaveni.css">
+    <link rel="stylesheet" href="/stylesheets/styleSideBar.css">
+    <link rel="stylesheet" href="/stylesheets/infocard.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+   
+  
+<div class="main-content">
+            
+
+  <div class="nadpis">
+        <h1 style="text-align: center;">NASTAVENÍ ÚDAJŮ</h1>
+    </div>
+    
+    <div class="container-nastaveni">
+        <div class="container-obsah">
+            <h1> Vaše body settings</h1>
+
+            
+           
+
+            <table> 
+                <thead>
+                    <tr>
+                        <th>Kategorie</th>
+                        <th>Data</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Výška</td>
+                        <td><%= heightOutput %> cm</td>
+                    </tr>
+                    <tr>
+                        <td>Váha</td>
+                        <td><%= weightOutput %> kg</td>
+                    </tr>
+                    <tr>
+                        <td>Věk</td>
+                        <td><%= ageOutput %> let/roky</td>
+                    </tr>
+
+
+                    
+                </tbody>
+            </table>
+
+            <form class="nastaveniPost" id="nastaveniPost" action="/nastaveni/delete" method="post">
+                <button style="margin-left: 3%" class="button-delete" type="submit">Smazat</button>
+            </form>
+
+             
+            
+        </div>
+        <div class="container-obsah">
+            <div class="table-container">
+                <h1>Zobrazení BMI</h1>
+                <% if(BMI>=19 && BMI<25){ %>
+                        <table>
+                            <thead>
+                                <tr>
+                                    <th>Kategorie</th>
+                                    <th>Data</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>Vaše BMI</td>
+                                    <td><%= BMI %></td> 
+                                </tr>
+                                <tr>
+                                    <td>Stav</td>
+                                    <td>Vynikájící</td>
+                                </tr>
+                                <tr>
+                                    <td>Identifikátor</td>
+                                    <td>&#128994</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                <% }else if((BMI<19 && BMI >17)||(BMI>=25 && BMI<30)){ %>  
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kategorie</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vaše BMI</td>
+                                <td><%= BMI %></td> 
+                            </tr>
+                            <tr>
+                                <td>Stav</td>
+                                <td>Dobrý</td>
+                            </tr>
+                            <tr>
+                                <td>Identifikátor</td>
+                                <td>&#128992;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <% }else if(BMI<17||BMI>=30){  %> 
+                    <table>
+                        <thead>
+                            <tr>
+                                <th>Kategorie</th>
+                                <th>Data</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Vaše BMI</td>
+                                <td><%= BMI %></td> 
+                            </tr>
+                            <tr>
+                                <td>Stav</td>
+                                <td>Špatný</td>
+                            </tr>
+                            <tr>
+                                <td>Identifikátor</td>
+                                <td>&#128308;</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                <%}%> 
+            </div>
+        </div> 
+             <!-- input html -->
+        <div class="container-obsah-dvojice">
+            <h1>Změna dat</h1>     
+            <form class= "nastaveniPost" id = "nastaveniPost" action="/nastaveni/accept" method="post">
+                <div class="inputBox">
+                    <input type="number" name="heightInput" required="required">
+                    <span>Výška</span>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="weightInput" required="required">
+                    <span>Váha</span>
+                </div>
+                <div class="inputBox">
+                    <input type="number" name="ageInput" required="required">
+                    <span>Věk</span>
+                </div>
+                    <button class="button-submit" type="submit" >Potvrdit</button>
+            </form>
+
+           
+                
+        </div>
+        <div style="margin-top: -750px;" class="container-obsah-dvojice"> 
+            <div class="infocard">
+                <p>- Zde můžete zadat základní údaje o vás <br><br>
+                - Data můžete průběžně měnit a bude vám tak správně počítán index BMI<br><br> 
+                </p>
+            </div>
+        </div>
+    <div>
+
+
+        <div>
+            <%- include('../views/pridatZaznam.ejs') %> 
+        </div>
+
+</div>
+
+
+
+</body>
+<script src="javascripts/nastaveniHandler.js"></script>
+</html>

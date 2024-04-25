@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<link rel="stylesheet" href="/stylesheets/styleHomePage.css">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Reem+Kufi+Ink&display=swap" rel="stylesheet">
+<title>Aktivitář</title>
+
+</head>
+
+<div class="navbar">
+  <div class="navbar-content">
+    <a href="#karticky"><span>Kartičky</span></a><a href="#grafy"><span>Grafy</span></a><a href="#pratele"><span>Přátelé</span></a><a href="#autori"><span>Autoři</span></a>
+  </div>
+    <div style="margin-bottom: 10px;"></div>
+    <div style="width: 50%; margin: auto; border-bottom: 1px solid #ffffff;"></div>
+
+  
+</div>
+
+  
+<div id="centercontent">
+  <p id="nadpis">AKTIVITÁŘ</p>
+  <p id="popis">Webová aplikace pro zaznamenávání aktivit během dne</p>
+
+  <div class="button-container">
+   <a href="/register" id="registerHRef">
+      <button class ="button green-button" onclick="cofirmPolicy()">Registrovat</button>
+    </a><a href="/login">
+      <button class="button orange-button">Přihlásit se</button>
+    </a>
+  </div>
+
+  <div class="arrow">
+    <a href="#karticky"><span>🤍</span></a>
+    
+  </div>
+
+
+
+    <p id="cojeto">Co Aktivitář dělá?</p>
+  
+    <p id="cojetotext">Aktivitář je webová aplikace, která umožňuje uživatelům zaznamenávat si denní aktivity a sledovat svůj progres <br>
+       pomocí přehledných grafů a analýz. Pokroky může uživatel porovnávat se svými přáteli, <br>což přidává na motivaci ke konstantnímu zlepšování. </p>
+
+</div>
+
+
+
+
+<div class="section" id="karticky">
+
+  <p id="sectionnadpis"> Kartičky</p>
+  <img id="sectionobr1" src="/images/lastsix_transparent.png" alt="Example Image">
+
+  <div id="sectiontext">
+      Aktivitář disponuje přehledem nedávných aktivit zobrazených v mřížce. Kartičky, které jsou obarveny do příslušných barev podle kategorie, zobrazují klíčové informace o dané aktivitě. Tato sekce slouží pro rychlý náhled do nejnovějších zápisů, přičemž seřazeny jsou od nejnovějších vlevo nahoře po nejstarší vpravo dole.
+  </div>
+
+</div>
+
+
+
+<div class="section" id="grafy">
+
+  <p id="sectionnadpis"> Grafy</p>
+
+
+  <div id="sectiontext">
+    <img id="sectionobr2" src="/images/graf.png" alt="Example Image">
+    V sekci <i>statistiky</i> se zobrazují grafy vašich aktivit, které vytváří přehlednější pohled na vaše aktivity. Můžete si tak prohlédnout, zda se váš výkon za poslední dobu zlepšuje, nebo je potřeba na sobě zapracovat. Grafy vám umožňují jednoduše se porovnat s vašimi přáteli. 
+  </div>
+
+</div>
+
+
+
+<div class="section" id="pratele">
+
+  <p id="sectionnadpis"> Přátelé</p>
+  <div id="sectiontext">
+    <img id="sectionobr3" src="/images/pratele.png" alt="Example Image">
+    Aplikace umožňuje přidání vašich přátel, se kterými poté lze porovnávát výkony a statistiky. Tím se docílí vzájemné motivace a kompetetivní předhánění o to, kdo má lepší výsledky.
+</div>
+</div>
+
+
+
+
+<div class="section" id="profil">
+
+  <p id="sectionnadpis"> Profily</p>
+  <div id="sectiontext">
+    <img id="sectionobr4" src="/images/pratele.png" alt="Example Image">
+    V aplikaci můžete prohlížet profily ostatních přátel v přehledném okně. Na profilu uživatele lze vidět jeho <i>Bio</i> společně s šesti posledními záznamy a zobrazení grafu naposledy přidané aktivity. Do svého <i>Bia</i> si může každý uživatel napsat pár bodů o sobě a svých koníčcích, čímž může ostatním o sobě něco říci.
+</div>
+</div>
+
+
+
+
+
+<div class="section" id="nastaveni">
+
+  <p id="sectionnadpis"> Nastavení</p>
+  <div id="sectiontext">
+    <img id="sectionobr5" src="/images/pratele.png" alt="Example Image">
+    Sekce nastavení umožnuje uživateli do programu zadat informace, jako věk, výška a váha, aby s nimi mohl dále pracovat - například pro výpočet indexu BMI. 
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+<div class="autorisection" id="autori" style="display: flex; flex-direction: column; align-items: center;">
+
+  <p id="autorinadpis"> Autoři</p>
+
+
+    <p id= "autoritext1" style="text-align: center;">Autory projektu jsou Michal Bogdanov, Kryštof Maxa a Šimon Hájek</p>
+
+     <img style="text-align: center; width: 400px; height: auto; margin-top: 25px; margin-bottom: 25px;" src="/images/GAlogo.png" alt="logoGA">
+
+    
+  
+</div>
+
+<div class="copyright">
+  <p id="autoritext2" style="text-align: center; ">
+    <a style="color:rgb(20, 132, 236);" href="https://github.com/gyarab/2023-3e-aktivitar">https://github.com/gyarab/2023-3e-aktivitar</a>
+</p>
+  <p>© 2024 - 2024 BoHaMA</p>
+</div>
+<div style="height: 50px;">
+
+</div>
+<!--<script src="/javascripts/confirmHandler.js"></script>-->
+</body>
+</html>

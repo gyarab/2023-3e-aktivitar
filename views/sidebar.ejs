@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home page</title>
+    <link rel="stylesheet" href="/stylesheets/styleSideBar.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+    <div class="sidebar">
+        <div class="top">
+            <div class="logo">
+                <i class="bx bxl-codepen"></i>
+                <span>Aktivitar</span>
+            </div>
+            <i class="bx bx-menu" id="btn"></i> <!-- tohle jsou takkovy ty tri tecky -->
+        </div>
+        <div class="user"><a href="/profile">
+            <i class='bx bx-user-circle' ></i>
+            </a><div>
+                <p class="bold">
+                    <%= name %>
+                </p>
+                <p class="username">
+                    <%= username %>
+                </p>
+            </div>
+        </div>
+        <ul>
+            <li>
+                <a href="/prehled">
+                    <i class="bx bxs-grid-alt"></i>
+                    <span class="nav-item">Přehled</span>
+                </a>
+                <span class="tooltip">Přehled</span>
+            </li>
+
+            <li>
+                <a href="/statistiky">
+                    <i class='bx bx-stats'></i>
+                    <span class="nav-item">Statistiky</span>
+                </a>
+                <span class="tooltip">Statistiky</span>
+            </li>
+
+            <li>
+                <a href="/historie?activtype=sport">
+                    <i class='bx bx-history'></i>
+                    <span class="nav-item">Historie</span>
+                </a>
+                <span class="tooltip">Historie</span>
+            </li>
+            <li>
+                <a href="/pratele">
+                    <i class='bx bx-group'></i>
+                    <span class="nav-item">Přátelé</span>
+                    <% if (notificationsCount > 0) { %>
+                    <span class="notification-badge"><%= notificationsCount %></span>
+                    <% } %>
+                </a>
+                <span class="tooltip">Přátelé</span>
+            </li>
+            <li>
+                <a href="/nastaveni">
+                    <i class="bx bx-cog"></i>
+                    <span class="nav-item">Nastavení</span>
+                </a>
+                <span class="tooltip">Nastavení</span>
+            </li>
+            <li>
+                <form action="/logout?_method=DELETE" method="POST">
+                    <i class="bx bx-log-out"></i> 
+                    <button type="submit" class="nav-item">Odhlásit </button>
+                </form>
+                <span class="tooltip">Odhlásit</span>
+            </li>
+        </ul>
+    </div>
+</body>
+
+
+
+<script>
+    let btn = document.querySelector('#btn');
+    let sidebar = document.querySelector('.sidebar');
+
+    btn.onclick = function () {
+        sidebar.classList.toggle('active');
+    };
+
+</script>
+
+</html>

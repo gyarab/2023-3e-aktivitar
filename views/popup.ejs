@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/popup.css">
+    <title>Add Activity</title>
+</head>
+<body>
+    
+  
+     <%- include('../views/' + lastUrlPart + '.ejs') %>
+    
+         <!--- vytvoreni popup menu-->
+    <div id="popup" class="popup">
+        <div class="popup-content">
+            <span class="close" onclick="closePopup()" >&times;</span>
+            <h2 class="toptitle">Vyberte typ záznamu </h2>
+            <br>
+
+            <div class="icon-gallery">
+            <!-- Icon 1 -->
+                <div class="icon-item">
+                    <i class='bx bxs-hot' onclick="details1()"></i>
+                    <p>Aktivita</p>
+                </div>
+
+                <!-- Icon 2 -->
+                <div class="icon-item">
+                    <i class='bx bxs-bowl-hot' onclick="details2()"></i>
+                    <p>Jídlo</p>
+                </div>
+
+                <!-- Icon 3 -->
+                <div class="icon-item">
+                    <i class='bx bxs-moon' onclick="details3()"></i>
+                    <p>Spánek</p>
+                </div>
+
+                <!-- Icon 4 -->
+                
+            </div>
+            <!-- tohle jsou ty veci co se objevi kdyz kliknu na nejakou tu ikonu 1-4 v tom popup-->
+
+
+<!--(1)SPORT-->
+    <form class= "addActivity" id = "addActivity" action="/pridatZaznam?activtype=sport" method="post">
+            <div id="additional-info1" style="display: none;">                                                  
+               <br>
+               
+
+               <div style="margin-bottom: 20px;">
+                <label for="activityDate" style="font-size: 18px; font-weight: bold; margin-right: 10px;">Datum:</label>
+                <input class= "field" type="date" id="activDate" name="activDate" style="padding: 10px; font-size: 14px; margin-top: 10px;" required>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 18px; font-weight: bold; margin-right: 10px; margin-bottom: 5px; ">Napište název aktivity:</p>
+                <input class= "field" type="text" id="activName" name="activName" style="width: calc(50% - 10px); padding: 10px; font-size: 16px; width: 100%;" placeholder="Název aktivity" required>
+            </div>
+        
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 18px; font-weight: bold; margin-right: 17px; margin-bottom: 5px;">Vyberte čas:</p>
+                <div style="display: flex; justify-content: center; margin-left: -6%;">
+                    <div style="margin-right: 10%;">
+                        <label for="fromTime" style="font-size: 16px;">Od:</label>
+                        <input class= "field" type="time" id="activFrTime" name="activFrTime" style="font-size: 14px; width: 120%; height: 40px;" required>
+                    </div>
+                    <div>
+                        <label for="toTime" style="font-size: 16px;">Do:</label>
+                        <input class= "field" type="time" id="activToTime" name="activToTime" style="font-size: 14px; width: 120%; height: 40px;" required>
+                    </div>
+                </div>
+            </div>  
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Vzdálenost:</p>
+                <input class="field" type="number" id="activDistance" name="activDistance" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="Vzdálenost v km" min="1" max="999" required>
+            </div>
+            
+            
+            <div style="margin-bottom: 20px;">
+                <p style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Kalorie:</p>
+                <input class= "field" type="number" id="activCal" name="activCal" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="Počet spálených kalorií" min="1"  required>
+            </div>
+        
+            <button class="submit" type="submit" >Potvrdit</button>
+            </div>
+        </form>    
+
+<!--(2)PRIJEM KALORII-->
+<form class= "addActivity" id = "addActivity" action="/pridatZaznam?activtype=call" method="post">
+            <div id="additional-info2" style="display: none;">                                                  
+                <br>
+                
+ 
+                <div style="margin-bottom: 20px;">
+                 <label for="activityDate" style="font-size: 18px; font-weight: bold; margin-right: 10px; margin-bottom: 5px;">Datum:</label>
+                 <input class= "field" type="date" id="callDate" name="callDate" style="padding: 10px; font-size: 14px;" required>
+             </div>
+         
+             <div style="margin-bottom: 20px;">
+                 <p style="font-size: 18px; font-weight: bold; margin-right: 10px; margin-bottom: 5px; ">Napište název jídla:</p>
+                 <input class= "field" type="text" id="callName" name="callName" style="width: calc(50% - 10px); padding: 10px; font-size: 16px; width: 100%;" placeholder="Název jídla" required>
+             </div>
+         
+             <div style="margin-bottom: 20px;">
+                 <p style="font-size: 18px; font-weight: bold; margin-right: 0px; margin-bottom: 5px;">Vyberte čas:</p>
+                 <div style="display: flex; justify-content: center;">
+                    <div style="margin-right: 15px;">
+                        <input class="field" type="time" id="callTime" name="callTime" style="font-size: 14px; width: 120%; height: 40px;" placeholder="Čas příjmu" required>
+                    </div>
+                    
+                 </div>
+             </div>
+         
+             <div style="margin-bottom: 20px;">
+                 <p style="font-size: 18px; font-weight: bold; margin-bottom: 5px;">Kalorie:</p>
+                 <input class= "field" type="number" id="calCalories" name="calCalories" style="width: 100%; padding: 10px; font-size: 14px;" placeholder="Počet přijmutých kalorií" min="1" max="9999" required>
+             </div>
+         
+             <button class="submit" type="submit" >Potvrdit</button>
+             </div>
+            </form>
+
+
+
+<!--(3)SPANEK-->
+<form class= "addActivity" id = "addActivity" action="/pridatZaznam?activtype=sleep" method="post">
+            <div id="additional-info3" style="display: none;">
+                <br>
+                
+ 
+                <div style="margin-bottom: 20px;">
+                 <label for="activityDate" style="font-size: 18px; font-weight: bold; margin-right: 10px; margin-bottom: 5px;">Datum:</label>
+                 <input class= "field" type="date" id="sleepDate" name="sleepDate" style="padding: 10px; font-size: 14px;" required>
+             </div>
+
+
+             <div style="margin-bottom: 20px;">
+                <p style="font-size: 18px; font-weight: bold; margin-right: 20px; margin-bottom: 5px;">Vyberte čas:</p>
+                
+                
+                
+                <div style="display: flex; justify-content: center; margin-right: 8%;">
+                    <div style="margin-right: 25px;">
+                        <label for="fromTime" style="font-size: 16px;">Od:</label>
+                        <input class= "field" type="time" id="sleepFrTime" name="sleepFrTime" style="font-size: 14px; width: 120%; height: 40px;" required>
+                    </div>
+                    <div>
+                        <label for="toTime" style="font-size: 16px;">Do:</label>
+                        <input class= "field" type="time" id="sleepToTime" name="sleepToTime" style="font-size: 14px; margin-bottom: 20px; width: 120%; height: 40px;" required>
+                    </div>
+                </div>
+
+
+                
+                <button class="submit" type="submit" >Potvrdit</button>
+             </div>
+             
+                
+
+            </div>  
+        </form>
+           
+<!--(4)ZÁPIS-->
+<form class= "addActivity" id = "addActivity" action="/pridatZaznam?activtype=book" method="post">
+            <div id="additional-info4" style="display: none;">
+              <br>
+              <br>
+              
+            <div style="margin-bottom: 10px;">
+                <p style="font-size: 18px; font-weight: bold; margin-right: 10px; margin-bottom: 5px; color: white;">Napište zápis:</p>
+                <input class="field" type="text" id="activityName" style="width: calc(100% - 20px); padding: 20px; font-size: 14px; word-wrap: break-word;" placeholder="Jak se právě cítíte?" required>
+            </div>
+                
+            <button class="submit" type="submit" >Potvrdit</button>
+            </div>
+            
+        </div>
+    </form>
+
+
+
+
+
+
+</body>
+
+
+
+<script src="/javascripts/popupHandler.js"></script>
+</html> 

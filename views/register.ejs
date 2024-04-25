@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registration</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="/stylesheets/register.css">
+</head>
+<body>
+    <div style="justify-content: center;align-items: center;text-align: center;">
+        <a id="aktivitar" href="/" style="text-decoration: none; color: white;">AKTIVITÁŘ</a>
+    </div>   
+    <div class = "background">
+        <div class="content">
+            <p id="registertext">REGISTRACE</p>
+            
+
+            <form class= "register" id = "register" action="/register" method="post">
+                    <input class="textfield" name="registerMail" type="email" placeholder="Email" required/>
+                    <input class="textfield" name="firstName" type="name" placeholder="Jméno" value="<%= locals.name %>">
+                    <input class="textfield" name="registerPass" type="password" placeholder="Heslo" required/>
+                    <input class="textfield" name="repeatedPass" type="password" placeholder="Heslo znovu" required/>
+
+                    <div>
+                        <% if (errors && errors.length > 0) { %>
+                            <% errors.forEach((error) => { %>
+                                <div class="popup">
+                                    <%= error %>
+                                </div>
+                            <% }); %>
+                        <% } %>
+                
+                    </div>
+
+                    <div class="logintext">Už máte účet? <a href="/login">Přihlásit se</a></div>
+                    <button class="submit" type="submit">Registrovat se</button>
+            </form>
+        </div>
+    </div>
+     
+    
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="/javascripts/confirmHandler.js"></script>
+</body>
+</html>

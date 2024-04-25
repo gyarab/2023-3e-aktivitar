@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profil</title>
+    <link rel="stylesheet" href="/stylesheets/profile.css">
+    <link rel="stylesheet" href="/stylesheets/infocard.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div >
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+
+
+
+
+
+    <div class="main-content">
+
+        <div class="nadpis">
+            <h1 style="text-align: center;">Profil</h1>
+        </div>
+        <div class="container">
+            <div class="left-div">
+                <div style="align-items: center; margin-left:10%;">              
+                        <h2 id="podnadpis" style="text-align: left;">Vaše nastavení profilu</h2>
+                        <p id="text" style="text-align: left;">Bio:</p>
+
+                        <form class= "bioPost" id = "nastaveniPost" action="/profile/saveBio" method="post">
+                            <textarea class="textarea" name="BioTextarea" rows="4" cols="50" placeholder="Co se vám honí hlavou?"><%= bio %></textarea>
+                            <button type="submit" class="button-submit">Uložit</button>
+                        </form>
+                            
+                </div>
+            </div>   
+            <div class="right-div">
+                <div class="container-changePass">
+                    <h2>Změna hesla </h2>
+                    <form id="change-password-form" action="/profile/changePassword" method="post">
+                        <!-- <div class="form-group">
+                            <label for="current-password">Current Password</label>
+                            <input type="password" id="current-password" name="current-password" required>
+                        </div> -->
+                        <div class="form-group">
+                            <label for="new-password">Nové heslo</label>
+                            <input type="password" id="new-password" name="newPassword" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="confirm-new-password">Potvrďte nové heslo</label>
+                            <input type="password" id="confirm-new-password" name="newPassConfi" required>
+                            <small id="password-match-error" style="color: red; display: none;">Hesla se neshodují</small>
+                            <small id="password-length-error" style="color: red; display: none;">Heslo musí být alespoň šest znaků dlouhé</small>
+                            <small id="password-success" style="color: green; display: none;">Heslo úspěšně změněno</small>
+                
+                        </div>
+                        <button id="change-password-btn" type="button-changePass" class="button-changePass">Změnit heslo</button>
+                    </form>
+                </div>
+            </div>
+            <div style="margin-right: 10%;" class="infocard">
+                <p style="font-size: large;">- V této sekci si můžete upravit informace o sobě. K tomu slouží kolonka <i>Bio</i>, kam si můžete napsat cokoliv vás napadne, přičemž ostatní tento text uvidí <br><br>
+                - Dále si zde můžete změnit heslo k vašemu <i>Aktivitář</i> účtu
+                </p>
+            </div>
+        </div>
+        
+
+
+        <div class="container" style="opacity: 0; " disabled>
+            <%- include('../views/pridatZaznam.ejs') %>
+        </div>
+
+
+            
+
+    </div>
+</body>
+<script>
+
+document.addEventListener('DOMContentLoaded', function() {
+    const newPasswordInput = document.getElementById('new-password');
+    const confirmNewPasswordInput = document.getElementById('confirm-new-password');
+    const changePasswordForm = document.getElementById('change-password-form');
+    const passwordMatchError = document.getElementById('password-match-error');
+    const passwordLengthError = document.getElementById('password-length-error');
+    const passwordSuccess = document.getElementById('password-success');
+
+    changePasswordForm.addEventListener('submit', function(event) {
+        // vygenerovano ChatGPT
+        event.preventDefault(); // Prevent form submission
+
+        const newPassword = newPasswordInput.value;
+        const confirmNewPassword = confirmNewPasswordInput.value;
+
+        if (newPassword.length < 6) {
+            // Password is too short, display error message and prevent form submission
+            passwordLengthError.style.display = 'block'; // Show error message
+            newPasswordInput.style.borderColor = 'red'; // Set border color to red
+            return; // Stop further execution
+        }
+
+        if (newPassword === confirmNewPassword) {
+            // Passwords match and meet length requirement, proceed with form submission
+            passwordSuccess.style.display = 'block'; // Show success message
+            passwordLengthError.style.display = 'none';
+            passwordMatchError.style.display = 'none';
+            confirmNewPasswordInput.style.borderColor = '#ccc'; 
+            setTimeout(function() {
+                passwordSuccess.style.display = 'none'; // Hide success message after 3 seconds
+            }, 3000);
+            changePasswordForm.reset(); // Reset form fields
+        } else {
+            // Passwords do not match, display error message and prevent form submission
+            passwordMatchError.style.display = 'block'; // Show error message
+            confirmNewPasswordInput.style.borderColor = 'red'; // Set border color to red
+        }
+    });
+
+    newPasswordInput.addEventListener('input', function() {
+        // Hide password length error message when user starts typing
+        passwordLengthError.style.display = 'none';
+        newPasswordInput.style.borderColor = ''; // Reset border color
+    });
+});
+
+
+</script>
+</html>

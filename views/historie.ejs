@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Historie</title>
+    <link rel="stylesheet" href="/stylesheets/historie.css">
+    <link rel="stylesheet" href="/stylesheets/styleSideBar.css">
+    <link rel="stylesheet" href="/stylesheets/infocard.css">
+    <link rel="stylesheet" href="/stylesheets/lastSixActiv.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+   
+    <div class="main-contentt"> 
+ <div>
+        <%- include('../views/pridatZaznam.ejs') %>
+    </div>
+        <div class="nadpiss">
+            <h1 style="text-align: center;">HISTORIE</h1>
+        </div>
+        
+        <div style="margin-bottom: 20px;" class="container-buttonActiv">
+            <div class="button-container">
+                <button class="button option1" onclick="window.location.href='historie?activtype=sport'">SPORT</button>
+                <button class="button option2" onclick="window.location.href='historie?activtype=call'">JÍDLO</button>
+                <button class="button option3" onclick="window.location.href='historie?activtype=sleep'">SPÁNEK</button>
+            </div>
+        </div>
+        
+        <!-- Nadpis pro dany typ aktivity -->
+        <div id="nadpisKartickyArr" class="nadpis-kartickyArr">
+
+        </div>
+        <!-- Div pro zadavani karticek -->
+        
+        <div class="card-container addActivity" style="align-items: center; justify-self: center; margin-left: 10%;" id="activityFrame">
+
+        </div>
+    </div>
+        
+
+</body>
+<script src="/javascripts/historieHandler.js"></script>
+
+</html>

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Statistiky</title>
+    <link rel="stylesheet" href="/stylesheets/statistiky.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<body>
+    
+
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+    
+    
+    
+        <div class="main-content">
+    
+
+
+            <div class="nadpis">
+                <h1 style="text-align: center;">STATISTIKY</h1>
+            </div>
+            
+
+            <div class="container">
+                <%- include('../views/pridatZaznam.ejs') %>
+                
+<!-- <input type="text" id="searchInput" onkeyup="searchFunction()" placeholder="Search..."> -->
+<input type="text" class="search-input" id="searchInput"  onkeyup="searchFunction()" placeholder="Search..." />
+                                
+               
+                
+               <div id="graphs">
+
+               </div>
+                      
+            </div>
+
+
+        </div>
+    <div>
+        <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+        <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+        <script  src="/javascripts/activityGraph.js"></script>
+        <script  src="/javascripts/statistikyHandler.js"></script>
+    </div>
+</body>
+<script>
+</script>
+</html>

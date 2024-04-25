@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Přehled</title>
+    <link rel="stylesheet" href="/stylesheets/friendProfile.css">
+    <link rel="stylesheet" href="/stylesheets/lastSixActiv.css">
+
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+
+<body>
+
+    <div>
+        <%- include('../views/sidebar.ejs') %>
+    </div>
+
+
+<div class="card-container" id="aktivitaKarta">
+                </div>
+
+
+    <div class="main-content">
+
+        <div class="nadpis">
+            <h1 style="text-align: center;">@<%= friendName %></h1>
+        </div>
+
+        <div style="align-items: center; margin: auto;">              
+                <h2 style="font-size: 300%;" id="podnadpis" >Profil uživatele "<%= friendName %>"</h2>
+                <h2 style="margin-top: 25px; margin-bottom: 10px;" id="text">Bio</h2>
+
+                <div class="container-textarea">
+                    <textarea id="BioTextarea"  class="textarea"  name="BioTextarea" rows="4" cols="50" ><%= bio %></textarea>
+            </div>
+                   
+            </div>
+
+        <h2 style="margin-top: 40px; margin-bottom: 25px;" id="podnadpis">Poslední aktivity uživatele "<%= friendName %>"</h2>
+
+            <!-- POSLEDNICH SEST AKTIVIT U TOHOLE -->
+            <div style="justify-content: center;" class="gridos" id="kartickyLastSix">
+
+                
+
+                <div class="frame template-frame" id="aktivitaframe">
+                </div>
+
+                <div class="frame template-frame" id="jidloframe">
+                </div>
+
+                <div class="frame template-frame" id="spanekframe">
+                </div>
+
+                <div class="frame template-frame" id="zapisframe">
+                </div>
+
+                <div class="frame template-frame" id="emptyframe" style="display: none;">
+                    <h3>Žádná data</h3>
+                </div>
+
+            </div>
+
+        <div style="justify-content: center;" class="gridparent">
+
+            <div class="grid">
+            </div>
+        </div>
+
+
+
+        <div class="container" style="   display:none;
+        ">
+            <%- include('../views/pridatZaznam.ejs') %>
+        </div>
+
+
+            <div style="justify-content: center;" class="gridos" id="kartickyLastSix">
+
+            <div style="justify-content: center;" class="gridos" id="kartickyLastSix">
+
+                
+
+                <div class="frame template-frame" id="aktivitaframe">
+                </div>
+
+                <div class="frame template-frame" id="jidloframe">
+                </div>
+
+                <div class="frame template-frame" id="spanekframe">
+                </div>
+
+                <div class="frame template-frame" id="zapisframe">
+                </div>
+
+                <div class="frame template-frame" id="emptyframe" style="display: none;">
+                    <h3>Žádná data</h3>
+                </div>
+            </div>
+
+            
+            <div style="margin-top: 35px;margin-right: 250px; text-align: center;" id="lastActivGraph"></div>
+
+
+
+
+<!--
+    
+-->
+
+
+    </div>
+    <div style="height: 100px;"></div>
+</body>
+    <script src="/javascripts/friendProfileHandler.js"></script>
+    <script src="/javascripts/lastGraphHandler.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/moment"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chartjs-adapter-moment"></script>
+
+</html>

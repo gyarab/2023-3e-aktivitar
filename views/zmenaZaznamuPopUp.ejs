@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/stylesheets/zmenaZazPopup.css">
+    
+    <title>Add Activity</title>
+</head>
+<body>
+    <%- include('../views/' + lastUrlPart + '.ejs') %>
+
+    <!-- <button id="open-popup">Open Popup</button> -->
+
+    <div id="popup" class="popup">
+        <div class="popup-content" style="height: auto; border-radius: 10px;  background: linear-gradient(to bottom, #97f8ff, #5acbff);">
+            <span class="close" id="close-popup">&times;</span>
+            <p style="font-size: 24px; margin-bottom: 3px;">Změna záznamu</p>
+           
+
+            <div id="div-change"></div>
+                
+            
+        
+
+                
+                
+                <div id="divpopup">
+
+                </div>
+                <div class="button-container" style=" bottom: 0; margin-left:3%; display: flex; justify-content: center;">
+                    <!-- <form class="nastaveniPost" id="nastaveniPostDelete" action="/zmenaZaznam/delete'+location.search+'" method="post"> 
+                      <button id="delete-btn" type="submit" class="delete-btn">SMAZAT</button>
+                    </form>  -->
+                    <!-- <button id="change-btn" type="submit" class="change-btn">Potvrdit</button> -->
+                  </div> 
+
+
+
+
+
+
+
+                <div id="div-delete"></div>
+          
+              
+            
+            
+        </div>
+    </div>
+</body>
+<script>
+//     document.getElementById("open-popup").addEventListener("click", function() {
+//     document.getElementById("popup").style.display = "block";
+// });
+
+document.getElementById("close-popup").addEventListener("click", function() {
+    document.getElementById("popup").style.display = "none";
+    window.location.href = 'http://localhost:3000/historie?activtype=sport'
+});
+</script>
+<script src="javascripts/zmenaZaznamHandler.js"></script>
+</html> 
